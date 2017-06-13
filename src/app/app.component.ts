@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Volansys';
   page = 'Volansys New page';
+  test = 'New page of Volansys';
 }
