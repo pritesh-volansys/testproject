@@ -6,18 +6,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./success-alert.component.css']
 })
 export class SuccessAlertComponent implements OnInit {
-serverid = 10;
-serverstatus = "Offline";
-User = "Pritesh";
+  serverid = 10;
+  serverstatus = "Offline";
+  User = "Pritesh";
+  allowUsertoadd = false;
+  ServerstatusMessage = "Server Not enable";
 
-getserverName(){
-return this.User;
-}
+  getserverName() {
+    return this.User;
+  }
 
+  OnClickbtton() {
+    this.ServerstatusMessage = "Server enable";
+  }
 
-  constructor() { }
+  constructor() {
+    setTimeout(() => {
+      this.allowUsertoadd = true;
+    }, 2000)
+  }
 
   ngOnInit() {
+  }
+
+
+  onUpdateServerName(event: Event) {
+    this.ServerstatusMessage = (<HTMLInputElement>event.target).value;
   }
 
 }
